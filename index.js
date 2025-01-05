@@ -281,7 +281,7 @@ app.get('/hotels/sort/reviews', (req, res) => {
 
 //  <http://localhost:3000/hotels/filter/amenity?amenity=spa>
 function filterByAmenity(hotelObj, amenity) {
-  return hotelObj.amenity === amenity;
+  return hotelObj.amenity.toLowerCase() === amenity.toLowerCase();
 }
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
@@ -294,7 +294,7 @@ app.get('/hotels/filter/amenity', (req, res) => {
 
 // <http://localhost:3000/hotels/filter/country?country=india>
 function filterByCountry(hotelObj, country) {
-  return hotelObj.country === country;
+  return hotelObj.country.toLowerCase() === country.toLowerCase();
 }
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country;
