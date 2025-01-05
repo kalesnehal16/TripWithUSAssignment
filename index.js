@@ -316,7 +316,8 @@ app.get('/hotels/filter/category', (req, res) => {
   let filterBasedOnCategory = hotels.filter((hotel) =>
     filterByCategory(hotel, category)
   );
-  res.json({ HotelsBasedOnCountry: filterBasedOnCategory });
+  //res.json({ HotelsBasedOnCountry: filterBasedOnCategory });
+  res.json({ filterBasedOnCategory });
 });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
