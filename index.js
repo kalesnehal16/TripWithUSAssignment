@@ -212,7 +212,7 @@ let hotels = [
 
 //Display all hotels
 app.get('/hotels', (req, res) => {
-  res.json(hotels);
+  res.json({hotels:hotels});
 });
 
 //  <http://localhost:3000/hotels/sort/pricing?pricing=low-to-high>
