@@ -282,6 +282,7 @@ app.get('/hotels/sort/reviews', (req, res) => {
 //  <http://localhost:3000/hotels/filter/amenity?amenity=spa>
 function filterByAmenity(hotelObj, amenity) {
   return hotelObj.amenity.toLowerCase() === amenity.toLowerCase();
+  
 }
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
@@ -307,7 +308,7 @@ app.get('/hotels/filter/country', (req, res) => {
 
 // <http://localhost:3000/hotels/filter/category?category=luxury>
 function filterByCategory(hotelObj, category) {
-  return hotelObj.category === category;
+  return hotelObj.category.toLowerCase() === category.toLowerCase();
 }
 
 app.get('/hotels/filter/category', (req, res) => {
